@@ -1,0 +1,7 @@
+Use Robot,FALSE
+,TRUE
+IP,NoN
+Port,NoN
+Timer Tric,NoN
+Read Robot 1,1&0
+Read Robot 2,0&1

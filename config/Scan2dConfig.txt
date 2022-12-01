@@ -1,0 +1,7 @@
+Digit,13
+Head1,True
+Head2,True
+Head3,True
+Head4,True
+Customer,False
+SetFocus,NextHeadBig
