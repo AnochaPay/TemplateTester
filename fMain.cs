@@ -22,7 +22,6 @@ namespace WindowsFormsApplication1 {
     partial class fMain : Form {
         #region============================================================= Variable =============================================================
         public fMain() {
-            InitializeComponent();
             setupPay.SelectTab = SetupPay.tabPage.TAB1;
             setupPay.set_nameTab(tester.nameFile);
             setupPay.SelectTab = SetupPay.tabPage.TAB2;
@@ -34,6 +33,7 @@ namespace WindowsFormsApplication1 {
             setupPay.SelectTab = SetupPay.tabPage.TAB5;
             setupPay.set_nameTab(dataLog.nameFile);
             setupPay.setup();
+            InitializeComponent();
 
             functionExcel = Type.GetType(define.formClass);
         }
@@ -3232,6 +3232,9 @@ namespace WindowsFormsApplication1 {
             tb_wo.Focus();
             Activator.CreateInstance(functionExcel, this, "setup()");
             Cursor.Show();
+
+            flagSizeChanged = true;
+            fMain_sizechanged();
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e) {
             flag_this_close = true;
@@ -3250,6 +3253,7 @@ namespace WindowsFormsApplication1 {
             Environment.Exit(0);
         }
         private void Form1_ResizeEnd(object sender, EventArgs e) {
+            return;
             ///If from size less than 1155, 625. Program will auto adjust to 1155, 625
             ///and set it to center position of screen
             if ((this.Size.Width < 1155) | (this.Size.Height < 625)) {
@@ -4566,7 +4570,14 @@ namespace WindowsFormsApplication1 {
         private void fMain_SizeChanged(object sender, EventArgs e) {
             fMain_sizechanged();
         }
+        /// <summary>
+        /// Flag for disable enable size changed
+        /// </summary>
+        private bool flagSizeChanged { get; set; }
         private void fMain_sizechanged() {
+            if (!flagSizeChanged) {
+                return;
+            }
             GroupBox[] g = new GroupBox[36];//ไอศครีมเชอเบร็ตรสมะนาว
             g[0] = groupBox_head1; g[1] = groupBox_head2; g[2] = groupBox_head3; g[3] = groupBox_head4; g[4] = groupBox_head5;
             g[5] = groupBox_head6; g[6] = groupBox_head7; g[7] = groupBox_head8; g[8] = groupBox_head9; g[9] = groupBox_head10;

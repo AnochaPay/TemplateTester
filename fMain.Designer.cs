@@ -1877,7 +1877,7 @@
             this.tb_swVersion.Name = "tb_swVersion";
             this.tb_swVersion.Size = new System.Drawing.Size(69, 17);
             this.tb_swVersion.TabIndex = 7;
-            this.tb_swVersion.Text = "V2022.09";
+            this.tb_swVersion.Text = "V2022.10";
             this.tb_swVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lb_userID

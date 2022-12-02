@@ -42,5 +42,8 @@ namespace WindowsFormsApplication1 {
         //V2022.09
         //Add Eval check head function to upper and lower
         //Edit color label result pass fail to color.green
+
+        //V2022.10
+        //Edit size changed can adjust size all
     }
 }
